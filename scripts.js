@@ -271,13 +271,13 @@ function startHeader() {
     state.circleSize = 0.3;
     state.circleOpacity = 1; // Gradient
 
-    createPlane("grad", '/images/Header_Gradient.png');
+    createPlane("grad", '/images/https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6434003794cfb1f6617a64a8_Header_Gradient.png');
     state.planes.grad.material.transparent = true; // Circle
 
-    createPlane("circle", '/images/Header_Circle.png');
+    createPlane("circle", '/images/https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/643400362c448e2daebff19d_Header_Circle.png');
     state.planes.circle.material.transparent = true; // Glow
 
-    createPlane("glow", '/images/Header_Circle-GLOW.png');
+    createPlane("glow", 'https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6434003604baa86f88fe931b_Header_Circle-GLOW.png');
     state.planes.glow.material.transparent = true;
     state.go = Math.random() * 100;
     resizePlanes();
