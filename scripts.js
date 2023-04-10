@@ -195,8 +195,8 @@ function startHeader() {
 
       var width = 2;
       var height = 1.8;
-      state.logoLight = new THREE.RectAreaLight(0x000000, 0, width, height);
-      var rectLightHelper = new THREE.RectAreaLightHelper(state.logoLight);
+      state.logoLight = new THREE.RectAreaLight(0x000000, 0, width, height); // const rectLightHelper = new THREE.RectAreaLightHelper(state.logoLight);
+
       state.models.logo.main.add(state.logoLight);
       var angle = Math.PI / 2;
       state.logoLight.position.set(0.043, 0.001, -0.04);
