@@ -11,8 +11,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function startHeader() {
   var settings = {
-    usePost: false,
-    useBG: false,
     yOffset: 1,
     pivotOffset: [0.15, 0.1, -0.66],
     slideTimeout: 500 // transitionDuration: 2000,
@@ -33,64 +31,40 @@ function startHeader() {
     state.renderer = new THREE.WebGLRenderer({
       canvas: state.canvas,
       alpha: true,
-      antialias: true // powerPreference: 'high-performance',
-      // toneMapping: THREE.ACESFilmicToneMapping,
-      // toneMappingExposure: 1.0,
-      // physicallyCorrectLights: true,
-      // outputEncoding: THREE.sRGBEncoding,
-
+      antialias: true
     });
     state.renderer.setClearColor(0x000000, 0);
     state.renderer.toneMapping = THREE.LinearToneMapping;
     state.renderer.toneMappingExposure = 1;
-    state.renderer.domElement.style.background = 'transparent'; // state.vmax = Math.max(window.innerWidth, window.innerHeight);
-    // state.size = window.innerHeight*0.8;
-    // state.renderer.setSize(state.size, state.size);
-    // state.renderer.setSize(window.innerWidth, window.innerHeight);
-
+    state.renderer.domElement.style.background = 'transparent';
     state.renderer.shadowMap.enabled = true;
-    state.renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Background
-
-    if (settings.useBG) {
-      state.textureLoader = new THREE.TextureLoader();
-      state.backgroundImage = state.textureLoader.load('/images/HeaderBG-light.jpg');
-      state.scene.background = state.backgroundImage;
-    } // Post process
-
-
-    if (settings.usePost) {
-      state.composer = new THREE.EffectComposer(state.renderer);
-      state.renderPass = new THREE.RenderPass(state.scene, state.camera);
-      state.composer.addPass(state.renderPass);
-      state.bloomPass = new THREE.UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.15, 0.5, 0.0);
-      state.composer.addPass(state.bloomPass);
-    }
+    state.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   };
 
   var initLighting = function initLighting() {
     state.lights = {}; // Consider converting to rect lights
     // Add ambient light
 
-    var ambientLight = new THREE.AmbientLight(0x404090, settings.usePost ? 1 : 3); // Color, intensity
+    var ambientLight = new THREE.AmbientLight(0x404090, 3); // Color, intensity
 
     state.scene.add(ambientLight);
     state.lights.ambientLight = ambientLight; // Add directional light 1
 
-    var light1 = new THREE.DirectionalLight(0xffffff, settings.usePost ? 1 : 1.0); // Color, intensity
+    var light1 = new THREE.DirectionalLight(0xffffff, 1.0); // Color, intensity
 
     light1.position.set(1, 0.6, 0.9); // X, Y, Z coordinates
 
     state.scene.add(light1);
     state.lights.light1 = light1; // Add directional light 2
 
-    var light2 = new THREE.DirectionalLight(0xffffff, settings.usePost ? 0.5 : 0.5); // Color, intensity
+    var light2 = new THREE.DirectionalLight(0xffffff, 0.5); // Color, intensity
 
     light2.position.set(-1, -0.25, 0.25); // X, Y, Z coordinates
 
     state.scene.add(light2);
     state.lights.light2 = light2; // // Add purple point light
 
-    var purpleLight = new THREE.PointLight(0xff6080, settings.usePost ? 0.4 : 0.5); // Color, intensity, distance
+    var purpleLight = new THREE.PointLight(0xff6080, 0.5); // Color, intensity, distance
 
     purpleLight.position.set(0, -1, 0); // X, Y, Z coordinates
 
@@ -232,7 +206,7 @@ function startHeader() {
       onComplete();
     };
 
-    loader.load('/models/model_gr.glb', onLoaded);
+    loader.load('https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6433f5eebbc6d186d6190cfd_model_gr.glb.txt', onLoaded);
   };
 
   var initCustomLogoShader = function initCustomLogoShader() {
@@ -293,16 +267,9 @@ function startHeader() {
 
   var initPlanes = function initPlanes() {
     state.planes = {};
-    state.textureLoader = new THREE.TextureLoader(); // state.bgAspectRatio = 1920/1080;
-    // state.bgDarkImage = state.textureLoader.load("/images/SBP - Main Concept.jpg")
-    // state.bgLightImage = state.textureLoader.load("/images/SBP - Main Concept - light.jpg")
-    // state.bgLight = false;
-    // state._bgLight = false;
-
+    state.textureLoader = new THREE.TextureLoader();
     state.circleSize = 0.3;
-    state.circleOpacity = 1; // BG
-    // createPlane("bg", '/images/SBP - Main Concept.jpg');
-    // Gradient
+    state.circleOpacity = 1; // Gradient
 
     createPlane("grad", '/images/Header_Gradient.png');
     state.planes.grad.material.transparent = true; // Circle
