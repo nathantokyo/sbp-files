@@ -610,6 +610,7 @@ function startHeader() {
 
   var ready = function ready() {
     loadingFinished();
+    document.documentElement.classList.add("loading-finished");
     state.ready = true;
     initStateDebug();
     initScrollStateChange();
@@ -617,7 +618,7 @@ function startHeader() {
 
     setTimeout(function () {
       transitionToState("intro");
-    }, 1000); // setTimeout(() => {transitionToState("state1");}, 2000);
+    }, 500); // setTimeout(() => {transitionToState("state1");}, 2000);
 
     animate();
   }; // Init
