@@ -637,6 +637,10 @@ function startHeader() {
 }
 
 startHeader();
+document.documentElement.style.setProperty('--app-height', "".concat(window.innerHeight, "px"));
+window.addEventListener('resize', function () {
+  document.documentElement.style.setProperty('--app-height', "".concat(window.innerHeight, "px"));
+});
 
 },{"@babel/runtime/helpers/defineProperty":2,"@babel/runtime/helpers/interopRequireDefault":3}],2:[function(require,module,exports){
 "use strict";
