@@ -609,6 +609,7 @@ function startHeader() {
 
 
   var ready = function ready() {
+    loadingFinished();
     state.ready = true;
     initStateDebug();
     initScrollStateChange();
