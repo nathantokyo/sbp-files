@@ -73,7 +73,7 @@ input {
 .h1 {
   font-size: 3.5428vw;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .h1 {
     font-size: 7.62vw;
     margin-bottom: 4.318vw;
@@ -83,7 +83,7 @@ input {
 .h2 {
   font-size: 3.126vw;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .h2 {
     font-size: 7.112vw;
   }
@@ -128,7 +128,7 @@ input {
 .text + .button {
   margin-top: 1.042vw;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .button {
     height: 9.398vw;
     border-radius: 4.318vw;
@@ -152,7 +152,7 @@ input {
   letter-spacing: -0.01em;
   font-family: "Inter";
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .text {
     font-size: 3.556vw;
   }
@@ -180,7 +180,7 @@ input {
   -o-transition: opacity 500ms 500ms linear;
   transition: opacity 500ms 500ms linear;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__bg {
     height: var(--app-height);
   }
@@ -189,7 +189,7 @@ input {
   background-image: url("https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6433f6ae2c448e84f2bf2bd0_SBP-MainConcept-light.jpg");
   opacity: 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__bg.light {
     background-image: url("https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6441f9cbd09d4c8a85c2d889_header-bg-light-mobile.jpg");
   }
@@ -198,14 +198,14 @@ input {
   background-image: url("https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6433f6ae94cfb16acd796647_SBP-MainConcept.jpg");
   opacity: 1;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__bg.dark {
     background-image: url("https://uploads-ssl.webflow.com/61da11fb945a0b2c5041d4e0/6441f9cb6a6c6911dfce979a_header-bg-dark-mobile.jpg");
     background-size: 100% auto;
     background-position: 50% calc(50% - var(--app-height) * 0.08);
   }
 }
-@media screen and (max-width: 420px) and (max-aspect-ratio: 375/700) {
+@media screen and (max-width: 600px) and (max-aspect-ratio: 375/700) {
   .header__bg.dark {
     background-size: cover;
     background-position: center;
@@ -230,7 +230,7 @@ input {
   width: 100vh !important;
   height: 100vh !important;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__canvasWrap {
     height: calc(var(--app-height) * 0.66) !important;
     width: calc(var(--app-height) * 0.66) !important;
@@ -238,7 +238,7 @@ input {
     left: calc(50vw - var(--app-height) * 0.33);
   }
 }
-@media screen and (max-width: 420px) and (max-aspect-ratio: 375/700) {
+@media screen and (max-width: 600px) and (max-aspect-ratio: 375/700) {
   .header__canvasWrap {
     height: calc(var(--app-height) * 0.66) !important;
     width: calc(var(--app-height) * 0.66) !important;
@@ -260,6 +260,11 @@ input {
   -webkit-transition: opacity 500ms ease-in-out;
   -o-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
+}
+@media screen and (max-width: 600px) {
+  .header__canvas.back {
+    display: none;
+  }
 }
 .header__modelHover {
   position: absolute;
@@ -285,7 +290,7 @@ input {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__intro {
     bottom: auto;
     top: var(--app-height);
@@ -298,7 +303,7 @@ input {
     text-align: center;
   }
 }
-@media screen and (max-width: 420px) and (max-aspect-ratio: 375/667) {
+@media screen and (max-width: 600px) and (max-aspect-ratio: 375/667) {
   .header__intro {
     -webkit-transform: translateY(-100%) translateY(-17.78vw);
         -ms-transform: translateY(-100%) translateY(-17.78vw);
@@ -310,7 +315,7 @@ input {
   margin-top: 1.3546vw;
   opacity: 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__introRight {
     width: 67.31vw;
     margin: auto;
@@ -331,7 +336,7 @@ input {
           transform: translateX(-50%);
   text-align: center;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__steps {
     bottom: auto;
     top: var(--app-height);
@@ -344,7 +349,7 @@ input {
 .header__stepsIntro {
   opacity: 0;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__stepsIntro {
     display: none;
   }
@@ -358,7 +363,7 @@ input {
           justify-content: space-between;
   margin-top: 2.7613vw;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__stepsInner {
     width: 167.64vw;
   }
@@ -378,7 +383,7 @@ input {
   max-width: 13.025vw;
   cursor: pointer;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__step {
     max-width: 55.88vw;
     min-width: 55.88vw;
@@ -438,7 +443,7 @@ input {
   border-radius: 1.2504vw;
   border: 0.1042vw solid rgba(237, 237, 255, 0.5);
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__stepIcon {
     min-width: 11.684vw;
     max-width: 11.684vw;
@@ -450,8 +455,7 @@ input {
     max-height: 5.08vw;
   }
   .header__stepIcon:before {
-    -webkit-filter: blur(2vw);
-            filter: blur(2vw);
+    display: none;
   }
   .header__stepIcon:after {
     top: 1.143vw;
@@ -492,7 +496,7 @@ input {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__sideText {
     width: 71.12vw;
     left: 50%;
@@ -623,7 +627,7 @@ html:not(.state-loading) .navi {
   transition: transform 750ms ease-in-out, opacity 500ms 500ms linear;
   transition: transform 750ms ease-in-out, opacity 500ms 500ms linear, -webkit-transform 750ms ease-in-out;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .state-intro .header__canvasWrap, .state-intro .header__modelHover, .state-hover .header__canvasWrap, .state-hover .header__modelHover {
     -webkit-transition: opacity 500ms 500ms linear, -webkit-transform 1000ms ease-in-out;
     transition: opacity 500ms 500ms linear, -webkit-transform 1000ms ease-in-out;
@@ -720,7 +724,7 @@ html:not(.state-loading) .navi {
   transition: transform 500ms ease-in-out;
   transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   [class*=state-state] .header__canvasWrap, [class*=state-state] .header__modelHover, .state-done .header__canvasWrap, .state-done .header__modelHover {
     -webkit-transform: translateY(-7vw) translateX(0.5vw) scale(1.15);
         -ms-transform: translateY(-7vw) translateX(0.5vw) scale(1.15);
@@ -804,7 +808,7 @@ html:not(.state-loading) .navi {
   opacity: 0.75;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 600px) {
   .header__stepsInner {
     -webkit-transition: -webkit-transform 750ms cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: -webkit-transform 750ms cubic-bezier(0.645, 0.045, 0.355, 1);

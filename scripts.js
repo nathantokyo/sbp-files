@@ -347,7 +347,8 @@ function startHeader() {
   };
 
   var copyCanvas = function copyCanvas() {
-    // get the source and destination canvas elements
+    if (window.innerWidth < 600) return; // get the source and destination canvas elements
+
     var canvas1 = document.getElementById('header-canvas');
     var canvas2 = document.getElementById('header-canvas-back'); // var s = canvas1.height/4;
     // var d = s * 0.70;
@@ -366,6 +367,7 @@ function startHeader() {
 
   var animate = function animate() {
     requestAnimationFrame(animate);
+    if (window.scrollY > window.innerHeight) return;
     state.t = Date.now();
     TWEEN.update();
     updateMouse();
@@ -387,7 +389,8 @@ function startHeader() {
     // Update the renderer's size
     // state.renderer.setSize(width, height);
 
-    state.renderer.setPixelRatio(window.devicePixelRatio);
+    var isMobile = window.innerWidth < 600;
+    state.renderer.setPixelRatio(isMobile ? 1 : window.devicePixelRatio);
     state.size = window.innerHeight;
     state.renderer.setSize(state.size, state.size);
     resizePlanes();
@@ -621,6 +624,17 @@ function startHeader() {
     }, 500); // setTimeout(() => {transitionToState("state1");}, 2000);
 
     animate();
+  };
+
+  var initListeners = function initListeners() {
+    var button = document.querySelector(".header__introButton");
+    if (button) button.addEventListener("click", transitionToState.bind(null, "state1"));
+    var step1 = document.querySelector(".step1");
+    if (step1) step1.addEventListener("click", transitionToState.bind(null, "state1"));
+    var step2 = document.querySelector(".step2");
+    if (step2) step2.addEventListener("click", transitionToState.bind(null, "state2"));
+    var step3 = document.querySelector(".step3");
+    if (step3) step3.addEventListener("click", transitionToState.bind(null, "state3"));
   }; // Init
 
 
@@ -629,6 +643,7 @@ function startHeader() {
     initMouse();
     initModel();
     initPlanes();
+    initListeners();
     window.addEventListener("resize", resize);
     resize();
     transitionToState("loading");
