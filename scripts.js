@@ -258,8 +258,8 @@ function startHeader() {
   };
 
   var rotatePivot = function rotatePivot() {
-    var x = (state.mouse.x - 0.5) * 10 + Math.sin(state.t / 2000) * -5;
-    var y = (state.mouse.y - 0.5) * 10 + Math.sin((state.t + 1500) / 3500) * -5;
+    var x = (state.mouse.x - 0.5) * 21 + Math.sin(state.t / 2000) * -5 - 5;
+    var y = (state.mouse.y - 0.5) * 28 + Math.sin((state.t + 1500) / 3500) * -5 + 5;
     state.pivot.rotation.set(THREE.MathUtils.degToRad(y), THREE.MathUtils.degToRad(x), 0);
     state.pivot.scale.set(state.logoSize, state.logoSize, state.logoSize);
   }; // Planes
